@@ -1,6 +1,8 @@
 from setuptools import setup, find_packages
 setup(name='TSEngine',
       version='1.0',
+      long_description=open('README.md').read(),
+      long_description_content_type='text/markdown',
       description='A tool to read in time serie data and produce feature-fashion data which is modelling ready.',
       author='ReidZ',
       author_email='reid.zhuang@icloud.com',
