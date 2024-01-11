@@ -1,6 +1,6 @@
 # license = Apache License, Version 2.0
 
-class engine_setup:
+class forge_setup:
     def __init__(self, cterm, checkday_list, period_list=[10, 30, 60], mode_round_number = -1, margin_value = 500, special_cnt_value = 0, period_comparison_base = [10, 30]):
         import numpy as np
         self.cterm = cterm
