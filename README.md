@@ -1,16 +1,16 @@
-# TSEngine
-### TSEngine is a Python library for time series feature engineering. It is mainly designed for machine learning modeling before the feature engineering process. It can transform time series data into feature data with low cost, serving users who do not have the conditions to use deep learning algorithms to process machine learning data, or who want to use expert knowledge to develop customized features.
+# tsforge
+### Tsforge is a Python library for time series feature engineering. It is mainly designed for machine learning modeling before the feature engineering process. It can transform time series data into feature data with low cost, serving users who do not have the conditions to use deep learning algorithms to process machine learning data, or who want to use expert knowledge to develop customized features.
 
-### TSEngine requires the following packages:
+### tsforge requires the following packages:
 - numpy
 - scipy
 
 ## Purpose
-TSEngine is a tool to generate continuous time series data into features for future modeling demands. It is suitable for users who have time series data and want to build a forecasting model with it, and who want to extract features from the time series data without too much computation burden. TSEngine is especially for those who prefer customized features extracted from time series data because they want to build forecasting models based on their valued professional experience, which deep learning methodology may not work as effectively and efficiently.
+tsforge is a tool to generate continuous time series data into features for future modeling demands. It is suitable for users who have time series data and want to build a forecasting model with it, and who want to extract features from the time series data without too much computation burden. tsforge is especially for those who prefer customized features extracted from time series data because they want to build forecasting models based on their valued professional experience, which deep learning methodology may not work as effectively and efficiently.
 
-TSEngine functions better on continuous data type. Most of the features are designed to represent continuous time series data’s features. Only a few are designed to represent classified time series data’s features.
+tsforge functions better on continuous data type. Most of the features are designed to represent continuous time series data’s features. Only a few are designed to represent classified time series data’s features.
 
-TSEngine is part of a larger ecosystem of Python libraries for data science and machine learning, such as pandas, numpy, scipy, and scikit-learn. It can be used as a preprocessing step before applying other machine learning algorithms or models to the feature data.
+tsforge is part of a larger ecosystem of Python libraries for data science and machine learning, such as pandas, numpy, scipy, and scikit-learn. It can be used as a preprocessing step before applying other machine learning algorithms or models to the feature data.
 
 ## Parameters
 To use this tool, you need to specify two required parameters and five optional parameters (although we highly recommend you to enter all seven parameters to customize your own features). The parameters are:
@@ -24,11 +24,11 @@ To use this tool, you need to specify two required parameters and five optional 
 - **period_comparison_base**: This is a list of time steps that the tool will use to compare two periods of time series data. For example, if the list is [10], the tool will take period A (10 time steps from the most recent step) and period B (10 time steps before period A) and compare their statistics. 
 
 ## Code Example
-This is a demo of how to use TSEngine to transform time series data into feature data that is ready for modeling. 
+This is a demo of how to use tsforge to transform time series data into feature data that is ready for modeling. 
 
-First, import TSEngine and numpy. Then, create a numpy array with some random time series data. In this example, we have 30 time series, each with 200 time steps:
+First, import tsforge and numpy. Then, create a numpy array with some random time series data. In this example, we have 30 time series, each with 200 time steps:
 ```python
-import TSEngine
+import tsforge
 import numpy as np
 arr = np.random.rand(30, 200)*100
 ```
@@ -42,17 +42,17 @@ margin_value = 90
 special_cnt_value = 0
 period_comparison_base = [10, 30]
 ```
-After setting up the parameters, create an instance of the TSEngine class by using the engine_setup method:
+After setting up the parameters, create an instance of the tsforge class by using the forge_setup method:
 ```python
-tse = TSEngine.engine_setup(cterm, checkday_list, period_list, mode_round_number, margin_value, special_cnt_value, period_comparison_base)
+tsf = tsforge.forge_setup(cterm, checkday_list, period_list, mode_round_number, margin_value, special_cnt_value, period_comparison_base)
 ```
 Then, use the check_para method to check if the parameters are valid:
 ```python
-tse.check_para(arr)
+tsf.check_para(arr)
 ```
 Finally, use the pull_features method to generate the feature data from the time series data. This method will return two variables: the first one is the feature data in numpy.array format, and the second one is a list of feature names:
 ```python
-f_arr, f_index =  tse.pull_features(arr)
+f_arr, f_index =  tsf.pull_features(arr)
 ```
 You can now use the feature data for your modeling purposes.
 
@@ -77,7 +77,7 @@ This typical features the the model generated from the time series data:
 For more information, please check the demo file.
                       
 ## Contribution
-TSEngine is an open source project, and we welcome contributions from anyone who is interested in improving it. If you want to contribute, please follow these steps:
+Tsforge is an open source project, and we welcome contributions from anyone who is interested in improving it. If you want to contribute, please follow these steps:
 
 Fork the repository and clone it to your local machine.
 Create a new branch for your feature or bug fix.
@@ -87,9 +87,9 @@ Wait for the review and feedback from the maintainers.
 Before you contribute, please read the code of conduct and the contributing guidelines for more details.
 
 ## License
-TSEngine is licensed under the Apache License, Version 2.0. See the license file for more information.
+tsforge is licensed under the Apache License, Version 2.0. See the license file for more information.
 
 ## Contact
-If you have any questions, suggestions, or feedback, please feel free to contact me at Reid.Zhuang@icloud.com. You can also open an issue or a discussion on the GitHub repository. I appreciate your interest and support for TSEngine. Thank you! 😊
+If you have any questions, suggestions, or feedback, please feel free to contact me at Reid.Zhuang@icloud.com. You can also open an issue or a discussion on the GitHub repository. I appreciate your interest and support for tsforge. Thank you! 😊
 
 
