@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-setup(name='TSEngine',
+setup(name='tsforge',
       version='1.0',
       long_description=open('README.md').read(),
       long_description_content_type='text/markdown',
@@ -8,7 +8,7 @@ setup(name='TSEngine',
       author_email='reid.zhuang@icloud.com',
       requires= ['numpy','scipy'], 
       packages=find_packages(),
-      package_data={"TSEngine": ["demo.ipynb"], "TSEngine": ["README.md"], "TSEngine":["LICENSE"], "TSEngine":["NOTICE"]},
+      package_data={"tsforge": ["demo.ipynb"], "tsforge": ["README.md"], "tsforge":["LICENSE"], "tsforge":["NOTICE"]},
       license="Apache License 2.0",
       install_requires=['numpy','scipy']
       )
