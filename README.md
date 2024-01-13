@@ -10,7 +10,7 @@ tsforge is a tool to generate continuous time series data into features for futu
 
 tsforge functions better on continuous data type. Most of the features are designed to represent continuous time series data’s features. Only a few are designed to represent classified time series data’s features.
 
-tsforge is part of a larger ecosystem of Python libraries for data science and machine learning, such as pandas, numpy, scipy, and scikit-learn. It can be used as a preprocessing step before applying other machine learning algorithms or models to the feature data.
+tsforge is part of a larger ecosystem of Python libraries for data science and machine learning, such as numpy and scipy. It can be used as a preprocessing step before applying other machine learning algorithms or models to the feature data.
 
 ## Parameters
 To use this tool, you need to specify two required parameters and five optional parameters (although we highly recommend you to enter all seven parameters to customize your own features). The parameters are:
